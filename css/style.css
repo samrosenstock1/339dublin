@@ -1,0 +1,90 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Ensures consistent font across the page */
+}
+
+/* Header Styles */
+header {
+    background-color: #356E35; /* A dark green background for the header */
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between navigation links */
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    border: 2px solid transparent; /* Sets up for hover state */
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #4C944C; /* Lighter green for hover state */
+    border-color: #FFFFFF; /* White border on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px; /* Ensures the content does not stretch too wide */
+}
+
+section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+}
+
+.image-grid img {
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.image-grid img:hover {
+    transform: scale(1.1); /* Scales up images on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2A482A; /* Darker green than header */
+    color: white;
+}
+
+/* Skip Link Styling */
+#skip {
+    position: absolute;
+    top: 10px; /* Adjusted for better visibility */
+    left: -500px;
+    background-color: #314E31; /* Same as nav hover for consistency */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#skip:focus {
+    left: 10px; /* Better visibility when focused */
+}
