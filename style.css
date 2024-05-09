@@ -21,6 +21,7 @@ h1 {
 /* Navigation Bar Styles */
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Adds space between navigation links */
     padding: 10px 0;
@@ -61,11 +62,13 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px; /* Space between images */
+    grid-template-rows:repeat(5 auto);
 }
 
 .image-grid img {
     border-radius: 10px; /* Rounded corners for images */
     transition: transform 0.3s ease; /* Smooth transition for scaling */
+    /* height: 150px; */
 }
 
 .image-grid img:hover {
@@ -134,7 +137,22 @@ html {
     }
 }
 
+.image-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
 
+.image-btn:focus, .image-btn img:focus {
+    outline: 3px solid #4A90E2; /* Highlight the focused image */
+    outline-offset: 5px;
+}
+
+.image-btn img {
+    width: 100%; /* Adjust based on your layout */
+    display: block; /* Remove bottom space/gap */
+}
 
 
   .blog-tab {
