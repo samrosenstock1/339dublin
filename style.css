@@ -1,0 +1,225 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+}
+
+/* Header Styles */
+header {
+    background-color: #356E35; /* A dark green background for the header */
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between navigation links */
+    padding: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    border: 2px solid transparent; /* Sets up for hover state */
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #4C944C; /* Lighter green for hover state */
+    border-color: #FFFFFF; /* White border on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px; /* Ensures the content does not stretch too wide */
+}
+
+section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+/* .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+/* }  */
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px; /* Space between images */
+}
+
+.image-grid img {
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.image-grid img:hover {
+    transform: scale(1.1); /* Scales up images on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2A482A; /* Darker green than header */
+    color: white;
+}
+
+/* Skip Link Styling */
+#skip {
+    position: absolute;
+    top: 10px; /* Adjusted for better visibility */
+    left: -500px;
+    background-color: #314E31; /* Same as nav hover for consistency */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#skip:focus {
+    left: 10px; /* Better visibility when focused */
+    transition: 1s; /* Smooth transition for focus */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+#skip {
+    position: relative;
+    left: -500px; /* Initially positioned off-screen */
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+}
+
+.image-grid img:hover {
+    transform: scale(1.1); /* Scales up images on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds shadow for depth effect */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+      		scroll-behavior: auto; /* Disable smooth scrolling */
+    }
+
+    *{
+        	transition: 0s !important;
+    }
+  }
+
+
+@media screen and (min-width: 760px) {
+    .image-grid{
+        grid-template-columns: 45% 45%;
+        grid-gap: 20px
+    }
+}
+
+
+
+
+  .blog-tab {
+    background-color: #4A90E2; /* Example: a different color to highlight the Blog tab */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.blog-tab:hover {
+    background-color: #3071A9; /* Darker shade on hover for better interaction */
+    transition: background-color 0.3s ease;
+}
+
+/* Blog Articles Styling */
+article {
+    background-color: #f9f9f9; /* Light background for the article */
+    margin: 20px 0; /* Space between articles */
+    padding: 20px;
+    border-radius: 8px; /* Consistent with other rounded elements */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+article h3 {
+    color: #333; /* Dark color for headings */
+}
+
+article time {
+    font-size: 0.85em;
+    color: #666; /* Subtle color for date */
+}
+
+article p {
+    line-height: 1.6; /* Improved readability */
+}
+
+article img {
+    width: 100%; /* Ensure images fit within the article */
+    border-radius: 8px; /* Consistent rounded corners */
+    opacity: 0.8; /* Slightly see-through */
+    transition: opacity 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effects */
+}
+
+article img:hover {
+    opacity: 1; /* Full color on hover */
+    filter: brightness(110%); /* Slightly brighter on hover */
+}
+
+article {
+    border: 1px solid #ccc; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+article h3 {
+    color: #2A482A; /* Dark green for emphasis */
+    font-weight: bold;
+    margin-top: 0;
+}
+
+article time {
+    font-style: italic;
+    color: #666;
+    display: block; /* Gives its own line */
+    margin-bottom: 10px;
+}
+
+article p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+article a {
+    color: #356E35;
+    text-decoration: none; /* No underline */
+    border-bottom: 1px dotted #356E35; /* Subtle underline effect */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+article a:hover {
+    color: #4A90E2;
+    border-bottom-color: #4A90E2; /* Change color on hover */
+}
+
+
