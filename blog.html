@@ -11,8 +11,7 @@
     
 </head>
 <body>
-
-<a href = "#main">Skip to Main Content</a>
+<a href = "#main" id = "skip" >Skip to Main Content</a>
 
 <header>
     <h1>Exploring Ireland: A Study Abroad Journey</h1>
@@ -22,7 +21,7 @@
         <a href="kilkenny.html">Kilkenny</a>
         <a href="galway.html">Galway</a>
         <a href="cliffs.html">Cliffs of Moher</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html" class = "current">Blog</a>
         <a href="gallery.html">Gallery</a>
     </nav>
 </header>
@@ -33,13 +32,29 @@
     <article>
         <h3>Exploring Dublin: A City of History and Culture</h3>
         <time datetime="2024-05-07">May 7, 2024</time>
-        <p>Today I saw many things: ranging from the most infamous murder of all of Europe from the best Guinness in Ireland!</p>
+        <p>Today I saw many things, ranging from the most infamous murder of all of Europe to the best Guinness in Ireland! I started off the day with an amazing brunch. Next, I took a tour of the city
+            from a tour guide who had so much information in his back pocket. I learned about the city's culture and history leading up to current day, and learned about the story behind the Spire of Dublin. Afterwards, I drank my first Irish Guiness 
+            at Lord Edwards and was very impressed. I finished off the night with a great Chinese Restaurant.</p>
+        <!-- Scrollable Image Container -->
+        <div class="scrollable-container">
+            <img src="https://martincampbellart.com/wp-content/uploads/2020/11/20201110_214101-1080x675.jpg" alt="Spire of Dublin">
+            <img src= "images/Guinness.jpeg" alt="Guinness">
+            <img src="https://martincampbellart.com/wp-content/uploads/2020/11/20201110_214101-1080x675.jpg" alt="Dublin Streets">
+        </div>
+    
+        <!-- Links Below Images -->
+        <div class="link-container">
+            <a href="https://en.wikipedia.org/wiki/Spire_of_Dublin">Spire of Dublin</a>
+            <a href="http://www.lordedward.ie/Restaurant.html">Guinness</a>
+            <a href="https://dublin.ie/live/life-in-dublin/history-society/">Dublin History</a>
+        </div>
     </article>
 
     <article>
         <h3>Guinness Factory: A tour & tasting experience.</h3>
         <time datetime="2024-05-09">May 8, 2024</time>
-        <p>Today I toured the Guinness Factory and came away with a bunch of fun facts including the only 4 ingrediants of Guinness: barley, hops, yeast and water. </p>
+        <img src="https://martincampbellart.com/wp-content/uploads/2020/11/20201110_214101-1080x675.jpg" alt="Dublin Streets" style="width:100%; max-width:600px; display:block; margin:auto;">
+        <a href="https://en.wikipedia.org/wiki/Spire_of_Dublin" style="display:block; color: #0000FF; text-decoration: underline;">Spire of Dublin</a>
     </article>
 
     <!-- Add more articles for each blog post -->

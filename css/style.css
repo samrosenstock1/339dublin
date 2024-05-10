@@ -2,7 +2,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Ensures consistent font across the page */
+    font-family: Arial, sans-serif; 
 }
 
 /* Header Styles */
@@ -21,6 +21,7 @@ h1 {
 /* Navigation Bar Styles */
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Adds space between navigation links */
     padding: 10px 0;
@@ -52,18 +53,26 @@ section {
 }
 
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusting the min size to control image scaling */
     gap: 10px; /* Space between images */
+    justify-content: center; /* Centers the grid items */
+    padding: 10px; /* Padding around the grid */
 }
 
+/* General styles for images within the grid */
 .image-grid img {
-    border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    width: 100%; /* Makes images responsive to the size of the grid column */
+    max-width: 250px; /* Sets a maximum width for each image to prevent over-stretching */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds shadow for depth */
+    margin: auto; /* Center images horizontally within their container */
+    display: block; /* Removes any inline spacing */
 }
 
 .image-grid img:hover {
-    transform: scale(1.1); /* Scales up images on hover */
+    transform: scale(1.1); /* Scales up images on hover for a nice effect */
 }
 
 /* Footer Styles */
@@ -87,4 +96,208 @@ footer {
 
 #skip:focus {
     left: 10px; /* Better visibility when focused */
+    transition: 1s; /* Smooth transition for focus */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+#skip {
+    position: relative;
+    left: -500px; /* Initially positioned off-screen */
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+}
+
+.image-grid img:hover {
+    transform: scale(1.1); /* Scales up images on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds shadow for depth effect */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+      		scroll-behavior: auto; /* Disable smooth scrolling */
+    }
+
+    *{
+        	transition: 0s !important;
+    }
+  }
+
+
+@media screen and (min-width: 760px) {
+    .image-grid{
+        grid-template-columns: 45% 45%;
+        grid-gap: 20px
+    }
+}
+
+.image-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image-btn:focus, .image-btn img:focus {
+    outline: 3px solid #4A90E2; /* Highlight the focused image */
+    outline-offset: 5px;
+}
+
+.image-btn img {
+    width: 100%; /* Adjust based on your layout */
+    display: block; /* Remove bottom space/gap */
+}
+
+
+  .blog-tab {
+    background-color: #4A90E2; /* Example: a different color to highlight the Blog tab */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.blog-tab:hover {
+    background-color: #3071A9; /* Darker shade on hover for better interaction */
+    transition: background-color 0.3s ease;
+}
+
+/* Blog Articles Styling */
+article {
+    background-color: #f9f9f9; /* Light background for the article */
+    margin: 20px 0; /* Space between articles */
+    padding: 20px;
+    border-radius: 8px; /* Consistent with other rounded elements */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+article h3 {
+    color: #333; /* Dark color for headings */
+}
+
+article time {
+    font-size: 0.85em;
+    color: #666; /* Subtle color for date */
+}
+
+article p {
+    line-height: 1.6; /* Improved readability */
+}
+
+article img {
+    width: 100%; /* Ensure images fit within the article */
+    border-radius: 8px; /* Consistent rounded corners */
+    transition: opacity 0.3s ease, filter 0.3s ease; /* If these are present */
+    /* Other styles */
+}
+
+/* Remove or modify this section to stop changing appearance on hover */
+article img:hover {
+    opacity: 1; /* This might be making the image change on hover */
+    filter: none; /* If previously changing, reset to none */
+}
+
+article {
+    border: 1px solid #ccc; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+article h3 {
+    color: #2A482A; /* Dark green for emphasis */
+    font-weight: bold;
+    margin-top: 0;
+}
+
+article time {
+    font-style: italic;
+    color: #666;
+    display: block; /* Gives its own line */
+    margin-bottom: 10px;
+}
+
+article p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+article a {
+    color: #356E35;
+    text-decoration: none; /* No underline */
+    border-bottom: 1px dotted #356E35; /* Subtle underline effect */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+article a:hover {
+    color: #4A90E2;
+    border-bottom-color: #4A90E2; /* Change color on hover */
+}
+
+#skip {
+    position: absolute;
+    top: 40px; /* Adjusted to be slightly higher than before */
+    left: -1000px; /* Start offscreen to the left */
+    background-color: transparent; /* No background */
+    color: white; /* Text color changed to white */
+    padding: 8px 16px; /* Adequate padding for clickability */
+    border: none; /* No border */
+    border-radius: 5px; /* Soft rounded corners for aesthetics */
+    z-index: 1000; /* High z-index to ensure it's on top of other content */
+    transition: left 0.3s ease; /* Smooth transition for moving into view */
+}
+
+#skip:focus {
+    left: 10px; /* Comes into view when focused */
+}
+
+
+.current {
+    font-size: 16px; /* Smaller font size for a more compact appearance */
+    font-family: 'Arial', sans-serif;
+    color: white; /* Change text color to white */
+    border: 2px solid white; /* White border for better visibility */
+    padding: 5px 10px; /* Slightly reduced padding */
+    border-radius: 5px; /* Added rounded corners for a softer look */
+}
+
+.current::before {
+    content: "\2618 \2756"; /* Updated with more thematic symbols */
+    color: #FF7900; /* Maintained your orange color for visual interest */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* Spacing between images */
+    padding: 10px 0; /* Padding around the image container */
+}
+
+.scrollable-container img {
+    width: 200px; /* Fixed width for each image */
+    height: auto; /* Maintain aspect ratio */
+    flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column; /* Stacks children (links) vertically */
+    align-items: flex-start; /* Aligns links to the left */
+    padding: 10px 0;
+}
+
+.link-container a {
+    color: #0000FF; /* Classic link blue */
+    text-decoration: underline; /* Solid underline for all links */
+    margin-bottom: 10px; /* Adds space between links */
+    width: 100%; /* Optional: Makes each link take full width of the container */
+    text-align: left; /* Aligns text to the left */
 }

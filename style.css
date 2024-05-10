@@ -52,27 +52,27 @@ section {
     margin-bottom: 20px; /* Space between sections */
 }
 
-/* .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Space between images */
-/* }  */
-
 .image-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusting the min size to control image scaling */
     gap: 10px; /* Space between images */
-    grid-template-rows:repeat(5 auto);
+    justify-content: center; /* Centers the grid items */
+    padding: 10px; /* Padding around the grid */
 }
 
+/* General styles for images within the grid */
 .image-grid img {
-    border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-    /* height: 150px; */
+    width: 100%; /* Makes images responsive to the size of the grid column */
+    max-width: 250px; /* Sets a maximum width for each image to prevent over-stretching */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds shadow for depth */
+    margin: auto; /* Center images horizontally within their container */
+    display: block; /* Removes any inline spacing */
 }
 
 .image-grid img:hover {
-    transform: scale(1.1); /* Scales up images on hover */
+    transform: scale(1.1); /* Scales up images on hover for a nice effect */
 }
 
 /* Footer Styles */
@@ -192,13 +192,14 @@ article p {
 article img {
     width: 100%; /* Ensure images fit within the article */
     border-radius: 8px; /* Consistent rounded corners */
-    opacity: 0.8; /* Slightly see-through */
-    transition: opacity 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effects */
+    transition: opacity 0.3s ease, filter 0.3s ease; /* If these are present */
+    /* Other styles */
 }
 
+/* Remove or modify this section to stop changing appearance on hover */
 article img:hover {
-    opacity: 1; /* Full color on hover */
-    filter: brightness(110%); /* Slightly brighter on hover */
+    opacity: 1; /* This might be making the image change on hover */
+    filter: none; /* If previously changing, reset to none */
 }
 
 article {
@@ -240,4 +241,63 @@ article a:hover {
     border-bottom-color: #4A90E2; /* Change color on hover */
 }
 
+#skip {
+    position: absolute;
+    top: 40px; /* Adjusted to be slightly higher than before */
+    left: -1000px; /* Start offscreen to the left */
+    background-color: transparent; /* No background */
+    color: white; /* Text color changed to white */
+    padding: 8px 16px; /* Adequate padding for clickability */
+    border: none; /* No border */
+    border-radius: 5px; /* Soft rounded corners for aesthetics */
+    z-index: 1000; /* High z-index to ensure it's on top of other content */
+    transition: left 0.3s ease; /* Smooth transition for moving into view */
+}
 
+#skip:focus {
+    left: 10px; /* Comes into view when focused */
+}
+
+
+.current {
+    font-size: 16px; /* Smaller font size for a more compact appearance */
+    font-family: 'Arial', sans-serif;
+    color: white; /* Change text color to white */
+    border: 2px solid white; /* White border for better visibility */
+    padding: 5px 10px; /* Slightly reduced padding */
+    border-radius: 5px; /* Added rounded corners for a softer look */
+}
+
+.current::before {
+    content: "\2618 \2756"; /* Updated with more thematic symbols */
+    color: #FF7900; /* Maintained your orange color for visual interest */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* Spacing between images */
+    padding: 10px 0; /* Padding around the image container */
+}
+
+.scrollable-container img {
+    width: 200px; /* Fixed width for each image */
+    height: auto; /* Maintain aspect ratio */
+    flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column; /* Stacks children (links) vertically */
+    align-items: flex-start; /* Aligns links to the left */
+    padding: 10px 0;
+}
+
+.link-container a {
+    color: #0000FF; /* Classic link blue */
+    text-decoration: underline; /* Solid underline for all links */
+    margin-bottom: 10px; /* Adds space between links */
+    width: 100%; /* Optional: Makes each link take full width of the container */
+    text-align: left; /* Aligns text to the left */
+}
