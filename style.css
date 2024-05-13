@@ -5,6 +5,7 @@ body, html {
     font-family: Arial, sans-serif; 
 }
 
+
 /* Header Styles */
 header {
     background-color: #356E35; /* A dark green background for the header */
@@ -54,7 +55,7 @@ section {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusting the min size to control image scaling */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusting the min size to control image scaling */
     gap: 10px; /* Space between images */
     justify-content: center; /* Centers the grid items */
     padding: 10px; /* Padding around the grid */
@@ -129,13 +130,21 @@ html {
     }
   }
 
-
+/* 
 @media screen and (min-width: 760px) {
     .image-grid{
         grid-template-columns: 45% 45%;
-        grid-gap: 20px
+        grid-gap: 10px
     }
 }
+
+
+@media screen and (min-width: 900px) {
+    .image-grid{
+        grid-template-columns: 30% 30% 30%;
+        grid-gap: 20px
+    }
+} */
 
 .image-btn {
     background: none;
@@ -160,6 +169,8 @@ html {
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .blog-tab:hover {
@@ -188,6 +199,7 @@ article time {
 article p {
     line-height: 1.6; /* Improved readability */
 }
+
 
 article img {
     width: 100%; /* Ensure images fit within the article */
@@ -231,8 +243,6 @@ article p {
 
 article a {
     color: #356E35;
-    text-decoration: none; /* No underline */
-    border-bottom: 1px dotted #356E35; /* Subtle underline effect */
     transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
@@ -283,6 +293,7 @@ article a:hover {
 
 .scrollable-container img {
     width: 200px; /* Fixed width for each image */
+    height: 200px; /* Fixed height for each image */
     height: auto; /* Maintain aspect ratio */
     flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
 }
@@ -294,10 +305,3 @@ article a:hover {
     padding: 10px 0;
 }
 
-.link-container a {
-    color: #0000FF; /* Classic link blue */
-    text-decoration: underline; /* Solid underline for all links */
-    margin-bottom: 10px; /* Adds space between links */
-    width: 100%; /* Optional: Makes each link take full width of the container */
-    text-align: left; /* Aligns text to the left */
-}
